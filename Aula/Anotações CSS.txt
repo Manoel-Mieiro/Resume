@@ -1,0 +1,80 @@
+Creating & Linking a CSS Stylesheet
+
+Para começar, antes head do nosso html, criamos uma tag <link>, conforme ex:
+<head>
+	<link rel="stylesheet" type="text/css" href="../..">
+	//os atributos preenchidos são obrigatórios
+	//Os ".." representam diretório e nome do arquivo css, respectivamente.
+</head>
+
+
+How to test a stylesheet
+
+Para começar, o mais básico é escolher uma tag e formatá-la pra ver se referenciamos o arquivo corretamente
+
+Exemplo:
+//No HTML
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<head>
+
+//No css
+
+body{
+    background: red;
+}
+
+*Notou-se que - ao referenciar o arquivo, referenciei uma pasta que 
+eu sequer tinha e disse que o arquivo estava lá dentro
+Assim, o background não ficou vermelho. Bastou então remover
+o diretório e ficou assim:
+<link rel="stylesheet" type="text/css" href="style.css">
+
+
+What is a selector?
+
+Seletores são meios de pegar algum elemente delimitado por tag no html 
+e estilizá-lo
+
+Essa é uma maneira mais genérica de fazer essa seleção.
+
+Sendo assim, temos os class selectors; usados para editar um
+elemento de uma dada classe.
+
+Por fim, temos a seleção por id:
+Nela, podemos - assim como na classe - selecionar e editar
+elementos baseados em um id atribuído aos mesmos no HTML
+
+Contudo, diferente das classes, pode-se usar esse método com um elemento de cada vez.
+Além disso, devemos - no css - aplicar # antes de fazer as alterações.
+
+Ex:
+
+//No HTML
+<p id="sometext">Some text.</p>
+<p id="sometext">Some more text.</p>
+
+//No CSS
+
+#sometext{
+	color:orange
+}
+
+
+Classes & ID's in HTML
+
+
+Para estilizar uma classe, use o prefixo "."_ nome da classe, como abaixo:
+
+//No HTML
+<h1 class="titulo">Olá Mundo</h1>
+//No CSS
+.titulo{
+	color:blue;
+}
+
+
+*Vale lembrar que ao nomear uma classe ou ID,
+temos a boa prática de colocar hífen no nome, como:
+<h1 class="titulo-teste">Teste</h1>
+
+
