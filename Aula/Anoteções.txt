@@ -44,3 +44,245 @@ para que as dimensões fiquem boas, verifique o aspect ratio da imagem (300x100 
 *aprofundar-se em aspect ratio
 
 Se eu envolver a tag img em uma tag <a> eu posso fazer com que um click na imagem me leve para o link da tag <a>
+
+
+Videos & Youtube iFrames
+
+<video src=""></video> --> tag pra colocar um vídeo salvo no PC
+*Posso colocar um nome para o vídeo entre  ><, como:
+<video src="tutorial.mp4">É um tutorial</video>
+
+Contdo, só a tag video não é o suficiente para tornar o mesmo reproduzível no browser.
+Por isso, faz-se necessário o emprego do atributo controls.
+<video src="tutorial.mp4" controls>É um tutorial</video>
+Fora isso, posso redimensionar a janela do vídeo com height e/ou weight dentro da tag <video>
+
+É possível também aplicar uma thumb para o vídeo com o atributo poster="" que vai dentro de <video>, como em:
+<video src="tutorial.mp4" controls poster="thumb.jpeg">É um tutorial</video>
+
+Posso também setar o vídeo pra começar sozinho com o atributo autoplay dentro de <video>, como em:
+<video src="tutorial.mp4" autoplay>É um tutorial</video>
+
+Posso colocar o vídeo em loop com o atributo loop na tag <video>, como por exemplo:
+<video src="tutorial.mp4" loop>É um tutorial</video>
+
+Pra colocar um video direto do YT, vai na opção share e clica em "EMBED".
+Ali, você receberá um código HTML com a tag <iframe> para colar na página.
+
+
+
+Lists
+
+Lista desordenada (UL):
+<ul>
+	<li></li>
+	.	
+	.	
+	.
+	<li></li>
+</ul>
+
+*Dentro de cada li, posso adicionar outras tags, como <a>:
+<ul>
+	<li><a href ="#">Apples</a></li>
+	<li>Oranges</li>
+</ul>
+
+Pra Lista ordenada (OL) o que muda é a abertura e o fechamento da tag parent:
+<ol>
+	<li></li>
+	.	
+	.	
+	.
+	<li></li>
+</ol>
+
+Posso estilizar minha lista (numero, simbolo, etc) colocando o atributo type na partent ol, como em:
+<ol type="A"> //Vira ordenado por A, B ,...Z;
+<ol type="1"> //Vira ordenado por 1, 2 ,...infinto;
+<ol type="I"> //Vira ordenado por I, II ,...infinto (n° romanos); 
+<ol type="i"> //Vira ordenado por i, ii ,...infinto (n° romanos em lowercase); 
+
+Posso colocar uma lista dentro de outra, como em:
+<ol>
+	<li>Apples</li>
+	.	
+	.	
+	.
+	<li>Oranges</li>
+		<ol>
+			<li>Bergamota</li>
+			<li>Mixirica</li>
+		</ol>
+</ol>
+
+Para lista descritiva (DL):
+<dl>
+	<dt>Apples</dt>	--> dt stands for description term
+	<dd>É uma fruta</dd>	--> dd stands for description description
+</dl>
+
+O display será assim:
+
+Apples
+	-É uma fruta
+
+
+*Vale ressaltar que é uma lista um pouco mais incomum de ser usada.
+
+
+Tables
+
+<table>
+	<tr>
+	<td></td> --> td stands for table data
+	//o td cria entradas na minha linha, ou seja, colunas.
+	</tr> --> tr stands for table row
+</table>
+
+Exemplo:
+<table>
+	//Linha 1
+	<tr>
+		<td>One</td>
+		<td>Two</td>
+		<td>Three</td>
+	</tr>
+	//Linha 2
+	<tr>
+		<td>Four</td>
+		<td>Five</td>
+		<td>Six</td>
+	</tr>
+</table>
+
+Output do Exemplo:
+	One Two Three
+	Four Five Six
+
+Posso também definir cabeçalhos para minha linha, ou seja, cabeçalhos da tabela; como em:
+Basta usar <th></th> --> th stands for table header
+<table>
+	//Cabeçalho
+	<tr>
+		<td>1º</td>
+		<td>2°</td>
+		<td>3°</td>
+	</tr>
+	//Linha 1
+	<tr>
+		<td>One</td>
+		<td>Two</td>
+		<td>Three</td>
+	</tr>
+	//Linha 2
+	<tr>
+		<td>Four</td>
+		<td>Five</td>
+		<td>Six</td>
+	</tr>
+</table>
+
+Output do Exemplo:
+	1º  2°   3° // Estarão em negrito
+	One Two Three
+	Four Five Six
+
+Há também como adicionar um título para a tabela toda com o <caption>, como a seguir:
+
+//Título
+<caption><h2>Lista de Números<h2></caption>
+//Note que há como colocar atributos nesse caption, com o <h2>
+
+<table>
+	//Cabeçalho
+	<tr>
+		<td>1º</td>
+		<td>2°</td>
+		<td>3°</td>
+	</tr>
+	//Linha 1
+	<tr>
+		<td>One</td>
+		<td>Two</td>
+		<td>Three</td>
+	</tr>
+	//Linha 2
+	<tr>
+		<td>Four</td>
+		<td>Five</td>
+		<td>Six</td>
+	</tr>
+</table>
+
+Output do Exemplo:
+	Lista de Números
+	1º  2°   3° // Estarão em negrito
+	One Two Three
+	Four Five Six
+
+É uma boa prática separar o header do body da nossa table.
+Para isso, usa-se <thead></thead> e <tbody></tbody> para isolar as sessões.
+
+Exemplo:
+<table>
+	<thead>
+	//Cabeçalho
+	<tr>
+		<td>1º</td>
+		<td>2°</td>
+		<td>3°</td>
+	</tr>
+	</thead>
+
+	//Linha 1
+	<tbody>
+	<tr>
+		<td>One</td>
+		<td>Two</td>
+		<td>Three</td>
+	</tr>
+	//Linha 2
+	<tr>
+		<td>Four</td>
+		<td>Five</td>
+		<td>Six</td>
+	</tr>
+	</tbody>
+</table>
+
+Posso expandir a área que meu conteúdo ocupa na coluna para mais de uma com o  atributo colspan=""
+
+Exemplo:
+<table>
+	<thead>
+	//Cabeçalho
+	<tr>
+		<td>1º</td>
+		<td>2°</td>
+		<td>3°</td>
+	</tr>
+	</thead>
+
+	//Linha 1
+	<tbody>
+	<tr>
+		<td colspan = "2">One</td>
+		<td>Two</td>
+		<td>Three</td>
+	</tr>
+	//Linha 2
+	<tr>
+		<td>Four</td>
+		<td>Five</td>
+		<td>Six</td>
+	</tr>
+	</tbody>
+</table>
+
+Output do exemplo:
+Lista de Números
+	1º  2°   3° // Estarão em negrito
+	One 	Two Three
+	Four Five Six
+//Note que o conteúdo que estava na coluna 2° foi jogado para o lado
