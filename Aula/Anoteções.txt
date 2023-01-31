@@ -1,3 +1,13 @@
+<hr> --> stands for horizontal
+Com o hr, cria-se uma sublinha como:
+
+<h1>Oi, tudo bom?</h1>
+<hr>
+
+output: 
+Oi, tudo bom?
+___________________________________________________
+
 FORMATING A PAGE
 
 <head></head> --> tag para criar um cabeçalho (getalmente será ali que os elementos de navegação estarão)
@@ -286,3 +296,96 @@ Lista de Números
 	One 	Two Three
 	Four Five Six
 //Note que o conteúdo que estava na coluna 2° foi jogado para o lado
+
+
+Divs & Spans
+
+*Aprofundar-se em in-line e block display
+
+A tag span é uma tag do tipo in-line (horizontal) que usamos 
+para separar, por exemplo, um nav menu; de forma a formatá-lo
+depois com css.
+
+<span></span>
+
+Já a tag div é uma tag do tipo block (vertical) que usamos para
+, por exemplo, separar o conteúdo do site; de forma a formatá-lo
+com css depois.
+
+
+
+Input & Forms
+<input/>
+
+No input, podemos definir o tipo do dado que será inserido ali, como:
+<input type="text"/>
+
+Há também um tipo de input para senhas, como abaixo:
+<input type="password"/>
+
+Posso também setar um valor (máscara) para meu input, conforme abaixo:
+<intput type="text" value="Entre com seu nome"/>
+
+
+Temos também a tag textarea, que serve para inputs maiores
+<textarea></textarea>
+
+Posso redimensioná-la na página.
+
+Posso colocar atributos como linhas e colunas dentro da tag, como em:
+<textarea rows="10" cols="30">
+</textarea>
+
+Há também como setar um valor de dica, conforme abaixo:
+
+<textarea>
+Enter a paragraph
+</textarea>
+
+Temos também inputs do tipo date, email, file, submit, checkbox e radios:
+<input type="date"/>
+<input type="email"/>
+<input type="file"/>
+<input type="submit"/>
+<input type="checkbox"/>
+<input "type="radio"/> //bolinha para selecionar (apenas 1 pode, diferente do checkbox)
+podemos nomear o radio com o mesmo nome, para que apenas
+1 possa ser escolhido (isso não vale pra checkbox)
+
+para mais inputs: https://www.w3schools.com/TagS/att_input_type.asp
+
+Para completar, temos a tag form, usada pra conter os inputs
+<form></form>
+
+
+
+iFrames
+
+A tag iframe serve pra colocar o conetúdo de um site no seu
+<iframe src=""></iframe>
+
+Posso colocar entre >< um texto que represente o conetúdo caso 
+o browser do usuário não suporte iframe:
+<iframe src="https://www.google.com">Google Home Page</iframe>
+
+Posso também redimensionar meu iFrame com atributos de height e width
+
+Além disso, usando o atributo framborder podemos retirar a borda desse site (bagui cinza) do display:
+<iframe src="https://www.google.com" frameborder="0">Google Home Page</iframe>
+
+Infelizmente, nem todos os sites podem ser exibidos no iFrame, pois os donos não permite, como na Amazon.
+
+
+
+Meta Tags
+
+A tag meta name é usada pra informar coisas da página web pro mecanismo de pesquisa:
+<meta name="author" content="Eu">
+<meta name="keywords" content="Tutorial, HTML, Portifólio">
+Não lote o conteúdo das keywords
+
+
+Essa é muito importante, a viewport é responsável pela exibição da página 
+em outros tipos de aparelhos (PC x Celular, por ex).
+
+<meta name="viewport" content="width=device-width, intial-scale=1.0">
