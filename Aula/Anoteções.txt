@@ -1,0 +1,46 @@
+FORMATING A PAGE
+
+<head></head> --> tag para criar um cabeçalho (getalmente será ali que os elementos de navegação estarão)
+<main></main> --> aqui estará o que no corpo do site
+<footer></footer> --> aqui ficará o rodapé, onde geralmente links externos e infos de contato são alocadas
+
+<nav></nav> --> tag onde podemos linkar arquivos ou outras páginas à página (geralmente no header)
+
+<article></article> --> tag para blogs
+
+<section></section> --> geralmente usada com a tag article para criar sessões do mesmo
+
+*Evite usar mais de um h1; use-os em hierarquia, como:
+
+h1
+|	h2
+|	|	h3
+|	h2	|
+
+
+<aside></aside> --> tag usada quando estamos com conteúdo externo ao nosso site, como anúncios e queremos seprar esse conteúdo do nosso.
+
+
+LINKS
+
+<a herf=""></a> --> tag usada para referenciar arquivos ou páginas web
+*Lembre-se sempre de - ao referenciar uma página - adicionar https:// no href
+*Entre >< podemos colocar um nome para nosso link, além de algumas formatações (como h1) como:
+<a href="http://www.google.com"><h3>Google<h3></a>
+
+*Se quisermos que a pessoa não saia da página, basta atribuir o comando target = "_blank" para que o link seja aberto em uma nova guia, como:
+<a href="http://www.google.com" target = "_blank"><h3>Google<h3></a>
+
+IMAGES
+
+alt=""  --> é uma tag pra mostrar uma mensagem em caso de falha ao carregar uma imagem via link na net. Ela fica dentro de <img>
+Nós redimensionamos a imagem com width e height, como o exemplo abaixo:
+<img width="100" height="50"...>
+
+para que as dimensões fiquem boas, verifique o aspect ratio da imagem (300x100 por ex) no arquivo
+
+é possível também declarar apenas uma dimensão, assim, o próprio HTML vai ajustar o aspect ratio da outra.
+
+*aprofundar-se em aspect ratio
+
+Se eu envolver a tag img em uma tag <a> eu posso fazer com que um click na imagem me leve para o link da tag <a>
