@@ -381,6 +381,281 @@ h2[class|=subtitle-13]{
 }
 
 
+Types of colors
+
+Tem um color picker no Google, só pesquisar: é bem útil
 
 
+No Hex code cada bloco dos 6 digitos (2 digitos por bloco)
+representa, respectivamente, RED; GREEN; BLUE. 
+Vale tambémn mencionar que o código hexadecimal vai de
+0 até f, sendo 0 o ausência de cor e f a cor pura.
+
+Por exemplo, para saber uma das cores puras do RGB basta
+zerar os blocos indesejados e estourar o desejado.
+
+Azul Puro:
+Red:00
+Green:00
+Blue:ff
+
+Código hex:
+0000ff
+
+
+Branco:
+ffffff
+
+Preto:
+000000
+
+
+No RGB o mínimo é 0 e o máximo é 255.
+
+
+
+Coloring Text
+
+Recomenda-se usar o RGB ao invés do hex pela possibilidade de edição futura
+
+
+
+Background Colors
+
+Geralmente colocamos as tags do CSS no topo do código
+e as classes/ids abaixo
+
+
+Para colorir o background podemos usar a propriedade
+background que permite desde cores a fotos, ou somente bacground-color 
+se só formos trabalhar com cores.
+
+
+
+Images/URL's in CSS
+
+Para adiconar uma imagem, basca copiar o endereço da 
+mesma no google e na propriedade background chamar a função
+url() e colar o link lá dentro.
+
+Sim url(""), assim como rgb() é uma função do CSS
+
+
+Podemos fazer o mesmo com imagens locais, basta colar 
+o pathing no local da url.
+
+
+Podemos ser mais específicos e, assim como background-color, usar
+background-image como a propriedade pra setar um bg de imagem;  
+lembrando sempre de chamar a função url("").
+
+
+
+Other Background Properties
+
+pra repetir a imagem do bg, usamos a propriedade 
+background-repeat e setamos como repeat ou no-repear (caso 
+não quisermos a repetição);
+
+Ex:
+
+#service-image{
+	height:400px
+	width: 70%
+
+	background: url("../img/umg-2.jpg");
+	background-repeat: no-repeat;
+}
+
+
+Quando colocamos no-repeat podemos nos deparar com a 
+imagem ocupando menos espaço do que deveria.
+
+Para verificar isso, basta adicionar uma cor ao fundo 
+na tag id/classe pra ver se a imagem sobrepõe a cor
+ou se sobra espaço colorido.
+
+Se for o segundo caso, teremos que ajustar a imagem.
+
+Dito isso, usamos backgroun-size pra contornar esse problema.
+
+No background-size, o primeiro argumento é o height e o segundo 
+é o weitgh, mas ao declarar seus valores não precisamos
+chamá-los.
+
+Exemplo:
+#service-image{
+	height:400px
+	width: 70%
+
+	background: url("../img/umg-2.jpg");
+	background-repeat: no-repeat;
+	backgroud-size: 50px 100px;
+}
+
+
+As medidas podem ser em % também, que no caso corresponde ao total da
+imagem que será usado (dependendo, ela será cortada ou duplicará[parcial
+ou totalmente]).
+
+
+Mas temos uma maneira menos chata de fazer isso, basta usar
+o cover no argumento:
+
+Exemplo:
+#service-image{
+	height:400px
+	width: 70%
+
+	background: url("../img/umg-2.jpg");
+	background-repeat: no-repeat;
+	backgroud-size: cover;
+}
+
+Agora ela encaixará certinho na moldura.
+
+
+Podemos usar o contain também pra fazer isso mas as 
+proporções podem não ser as desejadas.
+
+
+Exemplo:
+#service-image{
+	height:400px
+	width: 70%
+
+	background: url("../img/umg-2.jpg");
+	background-repeat: no-repeat;
+	backgroud-size: contain;
+}
+
+
+
+
+Opacity/Transparency
+
+Podemos manipular o rgb levando opacidade e transparência
+em consideração.
+
+Para tal, temos que trocar a função de rgb para rgba.
+
+Essa mudança permitirá a adição de mais um argumento após o blue.
+
+Esse valor pode ir de 0 a 1 e é chamado alpha.
+
+0 remete à tranparente e 1 opaco 
+
+Exemplo:
+#service-image{
+	height:400px
+	width: 70%
+
+	background: url("../img/umg-2.jpg");
+	backgroud-size: contain;
+	background-color: rgba(204, 229, 255, 3);
+}
+
+
+
+
+Gradients
+
+Temos dois tipos de gradiente: Linear e Radial.
+
+Exemplo:
+#service-image{
+	height:400px
+	width: 70%
+
+
+	background: linear-gradient (to );	//Linear
+	background: radial-gradient ( ); //Radial
+	backgroud-size: contain;
+}
+
+Nos argumento, definimos as 4 posições, sendo elas:
+Top
+Botton
+Right
+Left
+
+
+
+Exemplo:
+
+#service-image{
+	height:400px
+	width: 70%
+
+
+	background: linear-gradient (to right red, green, blue);	//Linear
+	backgroud-size: contain;
+}
+
+
+Uma boa ideia é usar rgb e rgba pra dar efeito de fade.
+
+Exemplo:
+#service-image{
+	height:400px
+	width: 70%
+
+
+	background: linear-gradient (to right rgb(94, 225, 126), rgba (94, 255, 126. 0);	//Linear
+	backgroud-size: contain;
+}
+
+O resultado será uma cor rgb seguida dela mesma transparente (argumento alpha = 0).
+
+
+Posso botar mais de uma direção nos argumentos, pra fazer - por exemplo - uma diagonal.
+
+Exemplo:
+#service-image{
+	height:400px
+	width: 70%
+
+
+	background: linear-gradient (to botton right rgb(94, 225, 126), rgba (94, 255, 126. 0);	//Linear
+	backgroud-size: contain;
+}
+
+Assim teremos uma diagonal na direita.
+
+
+Podemos manipular as posições com ângulos também.
+
+Exemplo:
+#service-image{
+	height:400px
+	width: 70%
+
+
+	background: linear-gradient (-90deg rgb(94, 225, 126), rgba (94, 255, 126. 0);	//Linear
+	backgroud-size: contain;
+}
+
+Invertendo 90°, fazemos com que a figura inverta horizontalmente.
+
+A propósito, o ângulo deve ser acompanhado do deg que significa degrees (graus).
+
+
+No radial, nós basicamente especificamos o quanto de cada cor queremos
+em porcentagem.
+
+
+Há também dois tipos de radial: elipse (default) e circle.
+
+Basta declarar (caso queira o não default) como argumento inicial.
+
+
+Exemplo:
+#service-image{
+	height:400px
+	width: 70%
+
+
+	background: radial-gradient (circle, red 20%, blue 40%, green 55%);	//Radial
+	backgroud-size: contain; // isso aqui não funcional no radial, remova!
+}
 
