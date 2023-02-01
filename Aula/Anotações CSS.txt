@@ -78,3 +78,309 @@ temos a boa prática de colocar hífen no nome, como:
 <h1 class="titulo-teste">Teste</h1>
 
 
+Specitficity & When to use Selectors
+
+Mais infos em:https://www.w3schools.com/css/css_specificity.asp
+
+
+Pseudoselectors
+
+Os pseudoselectors são como atributos que colocamos em uma tag HTML, só que no CSS.
+
+Exemplo de Estrutura:
+h2:hover{ //após o h2 encontra-se um dos pseudoselectors
+	color:red;
+}
+
+Como visto no exemplo acima, o pseudoselector hover é responsável por alguma ação ao passar o 
+mouse por cima da tag que está sendo estilizada por esse CSS.
+
+Nesse caso, podemos - por ex - colcoar uma cor diferente para quando estiver fora do hover
+criando uma classe para a mesma tag, de forma a sobrescrever o estilo anterior,
+conforme o tópico da especifidade dos seletores.
+
+Assim, teriamos algo como:
+h2:hover{
+	color:red;
+}
+//classe sem o hover
+.no-hover{
+	color:blue;
+}
+
+O output dessa implementação seria o elemento com a classe 
+no-hover seria azul o tempo todo, a menos que passassemos o mouse
+em cima, de forma a torná-lo temporariamente vermelho.
+
+Temos também pseudoselectors para tags child (contidas), como em ul.
+
+Digamos que temos uma lista como essa:
+
+<ul>	//parent
+	<li>Criança1</li> 	//first-child
+	<li>Criança2</li>	//second-child
+	<li>Criança3</li>	//last-child
+</ul>
+
+
+Para estilizar individualmente cada criança, usamos um pseudoselector correspondente,
+conforme CSS abaixo:
+
+//Personalizando a Criança1
+
+li:first-child{
+	color:blue;
+}
+
+
+Agora, a Criança1 será a única pintada de algo na página
+
+
+Lembre-se que a última child tag deve ser chamada de last-child no pseudoselector
+
+
+Há também o pseudoselector nth-child, responsável por selecionar uma dada child colocada como argumento
+
+Exemplo:
+li: nth-child(2){
+	color: pink;
+}
+
+Agora, a Criança2 será rosa. Entretanto, todas as crianças do tipo li
+da página também serão, então, considere usar uma classe ou id se quiser
+deixar isso individual
+
+Por fim, temos o only-child, que usamos quando só há uma child na nossa tag/página
+Com isso, evitamos a fadiga.
+
+Exemplo:
+
+<ul>	//parent
+	<li>Criança</li> 	//only-child
+</ul>
+
+
+No CSS fica:
+
+li: only-child{
+	color:white;
+}
+
+
+Temos também pseudoselectors para tags ancor (<a>), como o link e o visited
+
+Usando o link, setamos atributos como por ex sua cor quando o link não foi aberto.
+
+Já o visited faz o mesmo, mas pra quando foi aberto.
+
+Exemplo:
+
+#google-link: link{
+	color: blue;
+}
+
+#google-link: visited{
+	color: red;
+}
+
+
+
+Advanced Selectors
+
+
+Primeiramente, para formatar alguma tag a partir de uma
+parent que a precede, basta chamarmos a anterior e a que 
+queremos formatar após a anterior pelo resto da página.
+
+Exemplo:
+
+h2 + a{
+	color: red;
+}
+
+Nesse exemplo, apenas as tags <a> precedidas de h2 serão
+formatadas em vermelho.
+
+
+Agora, se queremos formatar uma tag que não é precendida
+por sua parent, temos que mudar um pouco a notação, como abaixo:
+
+textarea ~ button{
+	color: purple;
+}
+
+Aqui, ambas textarea e button são childs de h2,
+mas textarea precede button e queremos formatar esse 
+último.
+
+Assim, usamos ~ ao invés de + para fazê-lo
+
+
+Temos também - para o caso de multiplas childs dentro 
+de um mesmo parent, podemos formatar todas; como em:
+
+Exemplo:
+//HTML
+<ul>
+	<li>child1</li>	//first-child
+	<li>child2</li>	//second-child
+	<a href = "www.google.com">Google</a>	//third-child
+	<li>child3</li>	//child4 last-child
+</ul>
+
+//CSS
+
+ul > li{
+	color: gray;
+}
+
+Assim, todas essas childs, exceto <a> serão cinza
+
+
+Podemos também formatar childs dentro da child da parent principal
+com um dado selector; mas falando assim é difícil, então temos um ex:
+
+//HTML
+<ul> //Paizão
+	<li>child1</li>	//first-child
+	<li>child2</li>	//last-child	//Paizinho
+		<ol>
+			<li>1</li>	//Child do paizinho
+			<li>2</li>	//Child do paizinho
+		</ol>
+</ul>
+
+
+//CSS
+ul li{
+	color: green;
+}
+
+Agora, todos os elementos de li pra baixos serão verdes
+
+
+
+Attribute Selectors
+
+Podemos estilizar não só tags, mas atributos também, como por exemplo imagens:
+
+Digamos que temos 2 imagens em diferentes pontos da página e queremos formatar ambas
+com uma borda preta
+
+
+Pra isso, devemos primeiramente ver se ambas tem algo em comum.
+
+Digamos então que estão ambas no mesmo diretório chamado img.
+
+Assim, o que devemos fazer no css então é:
+
+
+img[src^="../img/"]{
+	border:10px solid black;
+}
+
+
+Aqui notamos já a estrutura dese tipo de selector, que consiste em abrir chaves após a tag 
+em que estão contidos ser mencionada.
+
+Dentro da chave, declaramos o nome do atributo e após 
+a igualdade informamos o que queremos alterar desse atributo.
+
+Como queremos editar imagens de um mesmo diretório, escrevemos
+esse diretório como argumento. Porém, somente isso não vai formatá-las
+
+É preciso estabelecer um operadorzinho após o nome do atributo para
+selecionar ambas; que nesse caso foi o ^; que significa "todos".
+
+Então, traduzindo a expressão ficaria: Na tag imagens, atributo src;
+quero editar tudo (fotos nesse caso) que conste no diretório
+/img/
+
+Contudo, assim como podemos selecionar geral, ser mais específicos
+e selecionar arquivos que terminem em algum nome me comum.
+
+img[src$="../img/ele"]{
+	border:10px solid black;
+}
+
+Traduzindo a expressão: Na tag imagem, atributo src eu não quero
+dar borda preta pra ninguém que esteja na pasta que não 
+tenha seu nome terminado em "ele".
+
+
+Por fim, temos como selecionar todos os arquivos que contenham algo em comum
+com o *.
+
+img[src*="../img/"]{
+	border:10px solid black;
+}
+
+Assim, todos com img no diretório poderão ganhar a borda.
+
+
+Temos outro selector muito legal que basicamente nos permite
+diferenciar a formatação de classes e ids de uma maneira mais 
+específica.
+
+Por exemplo, eu posso ter meus subtítulos formatados 
+com uma dada cor, mas eu quero mudar a cor de um deles
+em especial para destaca-lo por algum motivo.
+
+
+O problema é que todos esses subtítulos estão na mesma classe,
+então na teoria eu teria que criar uma classe separada
+ou um style só pra ele.
+
+
+Só que eu também posso usar o seletor de atributos pra isso,
+desde que eu tenha um argumento que diferencie
+o subtítulo que eu quero dos demais.
+
+Pra isso, eu devo ir na classe do HTML e - caso não tenha - 
+criar um argumento para ela, tipo:
+
+
+<h2 class="subtitle article-subtitle">Título principal</h2>
+
+Note que eu dei um espaço no nome da classe e depois inseri mais texto
+
+Esse espaço pode ser entendido como um parêntese fechado onde o que vem
+depois do espaço é o conteúdo desse parêntese, ou seja, o argumento.
+
+Agora, conseguimos diferenciar essa classe das demais de mesmo nome.
+
+Então, vamos pro CSS formatá-la:
+
+h2[class~=article-subtitle]{
+	background: yellow;
+}
+
+Como dito antes, estamos editando um atributo do nosso h2,
+que nesse classo é a classe; só que com o diferencial de
+ser um elemento especificado por argumento que as demais 
+não têm (pq eu n botei).
+
+Pra isso, bastou colocar ~= seguido do argumento para fazer funcionar
+
+Podemos fazer essa mesma coisa com |= no lugar de ~=.
+
+Fazemos isso porque no mundo corporativo, esbarramos em 
+
+classes ou ids desse tipo:
+
+<h2 class="subtitle subtitle-03"></h2>
+<h2 class="subtitle subtitle-04"></h2>
+<h2 class="subtitle subtitle-05"></h2>
+<h2 class="subtitle subtitle-13"></h2>
+
+e por causa disso, queremos o que está depois do hífen; 
+então fazemos essa troca.
+
+h2[class|=subtitle-13]{
+	background: yellow;
+}
+
+
+
+
+
