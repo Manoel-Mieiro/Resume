@@ -882,6 +882,136 @@ o código CSS lá no nosso arquivo de CSS.
 
 
 
+The CSS Box Modle (2:49:07)
+
+Voltar nesse tempo caso não tenha entendido a teoria.
+
+
+
+Changing Content Size
+
+Geralmente determinamos as medidas do height com uma medida
+relativa.
+
+Já o width - visando responsividade - deve ser relativo.
+
+Se eu for no dev tools do browser e clicar no tablet com o celular
+(segundo ícone da esquerda pra direita) e clicar no 
+primeiro texto de opções que aparecer no topo da página
+eu posso ver como é o viewport da minha página em outros
+dispositivos.
+
+Se eu selecionar o Responsive, eu posso redimensionar meu
+viewport
+
+
+
+CSS Borders
+
+Apesar de não vermos, temos bordas em tudo, desde textos
+a imagens. 
+
+Dito isso, podemos estilizar essas bordas se for de nosso
+agrado com a propriedade border.
+
+Estrutura básica: border: size style color;
+
+
+Geralmente o tamanho fica entre 1 e 3 px.
+
+O estilo remete ao tipo de borda (serrilhada, sólida, etc)
+
+Exemplo:
+
+img{
+	border: 2px solid blue;	//solido
+	border: 2px dotted blue; // pontilhado
+	border: 2px dashed blue; //parece o pontilhado mas não é
+	border: 2px double blue; //dupla borda
+}
+
+
+
+Margin & Padding
+
+O padding serve pra afastar em relação à borda, a depender
+do valor do argumento.
+
+No caso, se eu não especificar a direção (botton, top,
+left, right) ele vai aplicar o padding em tudo igual.
+
+
+Já no caso da Margem, o conteúdo se afasta da mesma, levando
+por exemplo a borda consigo.
+
+Exemplo:
+
+img{
+	padding: 40px; //padding em tudo
+	padding-bottom:100px	//só abaixo
+	padding-top:5px	//só acima
+	padding-right:12px	//só na direita
+	padding-left:30px;	//só na esquerda
+
+	//margem
+	marging: 40px; //marging em tudo
+	marging-bottom:100px	//só abaixo
+	marging-top:5px	//só acima
+	marging-right:12px	//só na direita
+	marging-left:30px;	//só na esquerda
+}
+
+
+Podemos encurtar esse código e economizar linhas.
+
+Notação curta: 
+margin/padding: top value right value botton value left value;
+
+
+Se eu usar apenas dois argumentos, eu estarei formatando top e right
+de uma mesma maneira e left botton de outra mesma maneira.
+
+
+Float & Display Types
+
+O float manda nosso elemento pra algum lado da página
+e com isso abre espaço pra tudo que está abaixo se 
+readequear.
+
+Exemplo: 
+
+img{
+	float: right;
+}
+
+Com o disply podemos simplesmente nos livrar
+de algo na página de maneira a readequar
+os demais elementos pra preencher o espaço
+deixado.
+
+Exemplo:
+
+.table{
+	display: none;
+}
+
+temos também: 
+display inline;
+display inline-block; //fusão de inline com block
+
+Pesquisar mais sobre
+
+
+Podemos também dar o atributo inheret pro float e também o 
+none, que é o default.
+
+
+
+
+
+
+
+
 
 
 
