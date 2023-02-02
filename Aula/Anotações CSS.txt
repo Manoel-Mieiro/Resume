@@ -1008,8 +1008,234 @@ none, que é o default.
 
 
 
+What is Flexbox?
+
+Flexbox stands for 'flexible box'.
+
+É um tipo de display que vem com o alcance de propriedades
+permitindo arrangar itens facilmente.
+
+É uma alternativa às propriedades de display, float e outras.
+
+Display: flex;
+
+Um elemento Flexbox é dividido em duas partes principais: 
+container e itens.
+
+O contaiuner é o elemento parent  no qual o display é ativo.
+Isso geralmente é um div.
+
+Já os itens são childs do container e compõem o conteúdo 
+da box.
 
 
+Creating a Flex Container
+Basta digitar display: flex;
+
+
+
+Flex Direction & Wrap
+
+Pra começar, vamos trabalhar com a direção (vertical/horiozontal)
+
+Por padrão, começaremos com a horizontal.
+
+Contudo, podemos redefinir a orientação com a propriedade
+flex-direction: column; //ficará na vertical
+flex-direction: row;	//é o default e está na horizontal
+
+
+Podemos também flipar nosso conteúdo, isso é, mudar a ordem
+de display.
+
+Para isso, acrescentamos o sufixo reverse no flexdirection.
+
+flex-direction: column-reverse;
+
+Agora, tratando do wrap, que é uma propriedade de quebra de linha,
+nós a usamos quando queremos que nossos elementos caiam 
+para a linha ou coluna seguinte, de forma a estilizar 
+a página.
+
+Assim, usamos o seguinte código:
+
+flex-wrap: wrap;
+
+Podemos também inverter a ordem do wrap com o sufixo 
+reverse, como abaixo:
+
+flex-wrap: wrap-reverse;
+
+A propósito, podemos tirar o wrap com o nowrap, que é o
+valor padrão dessa propriedade. Felizmente não é comum.
+
+
+
+Content Alignment
+
+Para alinharmos o conteúdo, usamos a propriedade justify-content.
+
+Essa propriedade recebe 3 atributos; sendo eles:
+
+flex-start -> corresponde ao lugar de origem do flex (esquerda default)
+flex-end -> corresponde ao oposto do start (direita default)
+center -> alinha ao meio
+
+Temos também dois argumento especiais:
+
+space-between -> Cria espaços entre os itens de forma a 
+preencher todo o espaço do flex.
+
+space-around -> Aqui os espaços também são criados mas dessa vez
+há espaço esntre a borda do flex o o inicio/fim.
+
+O justify é pra alinhamento vertical.
+
+
+Agora, para o horizontal usamos align-itens.
+
+Os atributos ainda são os mesmos do justify; com exceção
+dos especiais.
+
+Aqui os especiais são: 
+
+stretch  -> Alinha todo mundo do topo ao fundo do flex.
+
+baseline -> Todos os elementos serão alinhados, independete
+da diferença na formatação (ex: tamanho).
+
+
+
+Flex Item Order
+
+Pra ordernar um/alguns flex item/s nós vamos na 
+classe/id que o/os conte/ê/m e criamos um atributo style
+com a componente order e simplesmente enumeramos a ordem
+que queremos exibir.
+
+Então, basta irmos no HTML e colocar isso lá.
+
+Exemplo:
+
+<div class="container">
+    <div class="container-item" style ="order: 4;"> A</div>
+    <div class="container-item" style ="order: 3;"> B</div>
+    <div class="container-item" style ="order: 5;"> C</div>
+    <div class="container-item" style ="order: 1;"> D</div>
+    <div class="container-item" style ="order: 2;"> E</div>
+</div>
+
+
+Vale lembrar que pra não perder tempo inserindo um style
+por vez, posso inserir vários de uma vez no vs code
+se segurar ctrl+alt+(seta pra baixo ou pra cima, vai depender
+se tu quer inserir pra cima ou pra baixo).
+
+Cada vez que eu apertar isso eu ganho um cursor.
+
+Pra tirar os cursores é só apertar alt.
+
+
+
+
+Shrink, Grow & Basis
+
+Primeiramente, o basis é responsável
+por estabelecer um valor mínimo de tamanho 
+para os elementos flex.
+
+Já o grow é responsável pelo tamanho deles.
+Ele deve ser inserido em todos os elemento do flex
+e é recomendável preencher todos com valores, pois
+seu default é 0, o que - ao atribuir valor a um(s) -
+vai gerar um problema com o tamanho.
+
+No caso, o argumento para grow é quantas vezes do default
+deve ser multiplicado para obter o tamanho.
+
+Isso é importante pra manter a responsividade do site quando
+a tela é reduzida ou expandida, mantendo as proporções.
+
+Entretanto, se ela for reduzida pra menos do valor base (basis)
+a proporção vai de vala e é aí que entra o shrink.
+
+Ele estabelecerá as proporções quando o encolhimento
+ocorrer.
+
+O valor base do shrink é 1.
+
+
+Se eu setar o shrink pra 0, ele não vai 
+encolher nosso elemento mesmo se dermos zoon-out.	 
+
+
+
+Exemplo:
+
+
+<div class="container">
+    <div class="container-item" style ="order: 4;
+    flex-grow:  1;
+    flex-shrink:   1;
+    flex-basis: 100px;
+"> A</div>
+    <div class="container-item" style ="order: 3;
+    flex-grow:  1;
+    flex-shrink:   3;	//vai encolher 3x mais o valor base por zoon-out;
+    flex-basis: 100px;
+"> B</div>
+    <div class="container-item" style ="order: 5;
+    flex-grow:  5;	//vai crescer 5x o valor base no zoon-in;
+    flex-shrink:   1;
+    flex-basis: 100px;
+"> C</div>
+    <div class="container-item" style ="order: 1;
+    flex-grow:  1;
+    flex-shrink:   0;	//não vai diminuir no zoon-out;
+    flex-basis: 100px;
+"> D</div>
+    <div class="container-item" style ="order: 2;
+    flex-grow:  1;
+    flex-shrink:   1;
+    flex-basis: 100px;
+"> E</div>
+</div>
+
+
+
+The 'flex' Property
+
+Agora é a hora de se sentir idota porque dava pra
+fazer tudo isso na mesma linha kkkkkkkkkkkkkkk.
+
+basicamente, a propriedade flex recebe três atributos
+como argumento, os quais remetem a grow shrink e basis.
+
+flex: grow shrink basis;
+
+Exemplo: 
+flex: 1 1 100px;
+
+
+Item Alignment
+
+Ao alinhar individualmente cada item flex, daremos
+override no align-itens se tivermos usado o mesmo antes.
+
+Para alinha individualment, usamos o align-self lá no elemento
+que está no html dentro do style.
+
+Podemos alinhar - novamente - em:
+center
+flex-star 
+flex-end
+
+assim, nosso código pode ser:
+
+<div style="align-self: flex-start;">A</div>
+
+
+																																																																																																											
 
 
 
