@@ -1239,8 +1239,434 @@ assim, nosso código pode ser:
 
 
 
+Grid vs Flexbox
+
+Grid é outro sistema de display que difere do flexbox
+pela capacidade de customização de ambos width e height
+dos elementos, enquanto o flexbox focava-se apenas no width.
 
 
+
+Creating a Grid
+
+Como dito antes, Grid - assim como o flexbox - são argumentos
+para a propriedade display, logo, para invocar uma grid:
+
+display: grid;
+
+
+
+Template Columns & Rows
+
+Para setar colunas e linhas, usamos as seguintes propriedades:
+grid-template-columns //colunas
+grid-template-rows	//linhas
+
+Agora falando dos argumentos, nós setamos valores (absolutos ou não) 
+para cada linha ou coluna que definem seu tamanho.
+
+Se eu inserir 3 valores, terem 3 linhas e/ou colunas.
+
+Exemplo:
+
+grid-template-columns: 10px 50px 10px;
+
+/*
+Terei uma primeira coluna muito pequena.
+A segunda sera grandinha.
+A terceira segue pequena.
+
+Entretanto, por usar valores absolutos, eu não prencherei
+todo o espaço da grid.
+
+Então, se quiser preencher direito, use valores relativos (%).
+*/ 
+
+
+Contudo, mais uma vez fui feito de trouxa e tinha uma
+maneira mais fácil de adequar o conteúdo ao espaço: o auto.
+
+
+Exemplo:
+display: grid;
+grid-template-columns: auto auto auto;
+grid-template-rows: auto auto;
+
+
+
+Justify & Align Grid
+
+Aqui, diferente do flex, nossos argumento são um pouco
+diferentes.
+
+Por exemplo:
+
+display: grid;
+
+justify-content: end;	//justifica à direita
+justify-content: start;	//justifica à esquerda
+justify-content: center;	//justifica no centro
+
+Aqui nota-se a diferentça entre o justify da flex pro da 
+grid. Basicamente eliminamos o prefixo flex da direção
+desejada no grid.
+
+
+Temos outros argumentos semelhantes: space-around (igual 
+no flex) e - ao invés do space between - temos o space-evenly
+
+justify-content: space-evenly //todos são espçados iguais
+justify-content: space-around //quase igual ao evenly
+
+
+Já na propriedade align-content, aplicamos os mesmos argumentos
+usados em  justify; só que o comportamento muda.
+
+
+
+
+Row & Columns Gaps
+
+Para setar um espaçamento entre colunas/linhas, usamos
+grid-column-gap pu grid-row-gap.
+
+Essas propriedades só recebem um valor como argumento.
+
+Pra não ter que escrever essas duas propriedades, podemos
+fazer algo mais fácil:
+
+grid-gap: column row;
+
+Assim, basta passarmos os respectivos valores.
+
+
+
+Column & Row Lines
+
+
+Lines são a propriedade mais importante da grid, aprofunde-se
+nelas.
+
+Basciamente setamos no html um grid-column e um grid-row
+e definimos onde a linha/coluna começa e termina,
+de forma a rearrajar os itens com uma sintexe mais simples.
+
+
+Exemplo:
+grid-column: 1/ 3;
+grid-row: 1/ 3;
+
+Só que desse jeito fica confuso saber onde as coisas começam 
+ou terminam
+
+Para isso, usamos span no endpoint (segundo parametro):
+
+grid-column: 1/ span 2;
+grid-row: 1/ span 2;
+
+
+
+Grid Area:
+Podemos fazer o que foi feito na sessão anterior de maneira
+mais fácil com o grid-area:
+
+
+grid area: row_start/ column_start/ row_end/ column_end;
+
+Exemplo:
+grid area: 2/ 1/ span 2/ 3;
+
+
+
+
+The Transition Property
+
+Para transição, nós temos os sudos, que são as propriedades
+de transição que cada classe/id poderá ter.
+
+Para fazermos essa edição, não poderemos editar
+esses sudos dentro da classe/id. Teremos que chamar
+novamente nossa classe/id e atribuir um dos sudos para
+ai sim formatá-los.
+
+Ex:
+
+//Quero editar o hover (mouse por cima) de um botão:
+
+.submit-button: hover{
+	color: gray;
+}
+
+Note que eu chamei o mesmo submit-button que eu já tinha
+e acrescentei ":" e o sudo "hover".
+
+Agora, tratando da transição em si; temos que chamá-la 
+no CSS da classe/id e adicionar argumentos que apontem
+para nosso sudo, o tempo de duração da animação e a direção.
+
+
+
+Exemplo:
+
+transition: all 2s ease 1s; //vou do estilo base para o sudo
+em dois seguntos (posso usar ms também) e maneira suave e
+ainda conto com um delay de 1s.
+
+//Vale alertar que é bom evitar usar all no argumento pois
+isso vai alterar a dinâmica de todos no sudo e não vai ficar
+legal.
+
+//Procure escolher uma propriedade e fazer isso com ela, é melhor.
+
+Exemplo 2:
+transition: background 2s linear 1s	//linear é pouco usado e mal 
+faz uma transição maneira.
+
+
+Exemplo 3: 
+transition: background 2s ease-in-out 	
+
+
+Vale lembrar que o argumento delay não é obrigatório
+
+
+É uma boa prática adicionar um prefixo à chamada
+de transição para que navegadores sem suporte à mesma
+não fiquem sem saber o que aconteceu.
+
+
+Para o Chrome:
+-webkit-transition:;
+
+Para o FireFox:
+-moz-transition:;
+
+
+Para o Opera:
+-o-transition:;
+
+
+
+
+Transformation Functions
+
+transform: translate (x, y);
+
+Ex:
+transform: translate (50px, 30px);
+
+//Move pra direita e pra baixo.
+
+Deve ser escrito no corpo da classe/id
+
+Pode receber um terceiro argumento para o eixo Z, mas ai 
+já é algo mais complicado e pouco usado.
+
+Por ser uma feature nova, melhor colocar 
+os prefixos de navegadores para o bom funcionamento
+em todos.
+
+
+Temos também a função scale, que basicamente expande
+nosso item dependendo do valor dado como argumento
+
+Ex:
+
+Quero dobrar o valor do meu botão:
+
+transform: scale(2);
+
+Lembrando sempre que devemos declarar as função do transform
+dentro da classe/id.
+
+
+Temos ainda a função rotate, que pega apenas um valor
+em deg (degrees)
+
+
+Ex: 
+transform: rotate(-45deg);
+
+
+Isso fará com que meu elemento gire 45 graus no
+sentido anti-horário (esquerda).
+
+Lembrando sempre de declarar dentro da classe/id.
+
+Temos também a função skew que tem variantes em X e Y (skewX, skewY).
+
+Basciamente, ao invés de girarmos em relação ao centro do objeto,
+vamos girar em relação ao eixo escolhido.
+
+Então, não vamos rotar de forma a mudar de posição (dentro
+da página) e sim rotar o próprio objeto de forma a deixá-lo
+meio torto e estranho.
+
+Por fim, temos uma função que da cover dessas transformações
+de uma vez só: matrix().
+
+Ela recebe os seguintes argumentos:
+
+transform:matrix(x-scale, skewY, skewX, y-scale, translate-x, translate-y);
+
+
+Se eu não quiser mexer, por exemplo, nos scales basta declarar
+1 no argumento.
+
+Se eu não quiser mexer nos skews, eu digito 0.
+
+Declare o skew em decimal, só que sem o deg (degree).
+
+Não é muito recomendado usar a matrix porque ela é confusa
+e nos tira muita liberdade pra modelar.
+
+Use-a em casos mais extremos em que - por exemplo - queira
+encurtar o código.
+
+
+
+
+Creating Animations w/Keyframes
+
+pra definir uma animação nós digitamos fora de qualquer
+classe no CSS:
+
+@keyframes nome{
+	example{	
+	background: red;
+	}
+}
+
+
+No lugar de example, no mundo real geralmente são números
+ou porcentagems.
+
+Temos duas keywords, assim como example para as animações
+que delimitam seu começo e fim: from e to.
+
+@keyframes red-to-black{
+	from{background: red;}
+	to{background:black;}
+}
+
+
+Contudo, tem vezes que quero animar mais de um background
+e infelizmente eu não posso colocar mais de 1 em from ou
+to.
+
+pra isso, usamos % como keyword, que representam o 
+tanto da animação que já passou, tipo uma marca no tempo.
+
+Exemplo:
+
+@keyframes red-to-black{
+	0%{background: red;} //início
+	50%{backgorund: yellow}	//meio
+	100%{background:black;} //fim
+}
+
+Posso também fazer transformações nessas animações, como:
+
+@keyframes red-to-black{
+	0%{background: red; transform: translate(0px, 0px);} //início
+	50%{backgorund: yellow transform: translate(10px, 10px);}	//meio
+	100%{background:black;transform: translate(20px, 20px);} //fim
+}
+ 
+
+
+O ideal é deixar as propriedades na mesma linha do curly bracket mas
+,se ficar muito grande, pode quebrar a linha.
+
+
+
+
+Adding an Animation
+
+Recomenta-se deixar animações e keyframes no fundo
+do CSS.
+
+Pra colocar a animação, vamos na classe/id e digitamos
+
+animation-name: nome da sua animação;
+
+Contudo, só isso não basta pra fazê-la rodar; faltam
+propriedades para isso.
+
+
+
+Animation Properties
+
+Como dito antes, não dá pra rodar sem as propriedades e
+para isso, usamos a animation-duration.
+
+Seu valor default é 0.
+
+Por seu default ser 0, nossa animação não rodou antes,
+pois ela começa e acaba em 0s.
+
+Então, por exemplo:
+
+#about-me{
+	animation-name: red-to-black;
+	animation-duration: 4s;
+}
+
+
+Temos também a propriedade que estiliza a animação:
+
+animation-timing-funciton: ;
+
+como argumento temos, por exemplo:
+ease
+linear
+ease-in
+ease-out
+
+
+Temos também a propriedade delay que curiosamente aceita
+valores negativos.
+
+Basciamente, um argumento negativo diz que passou-se x
+segundos da animação; então se até dois segundos
+eu tenho uma animação e eu declaro -2s no animation-delay
+eu pulo direto pra próxima animação e não vejo a primeira.
+
+
+Além disso, temos animation-iteration-count;
+
+Essa propriedade serve pra dar loop na animação e 
+aceita valores absolutos como argumento (ex: 2).
+
+Podemos botar infinite também pra ela rodar pra sempre.
+
+Por fim, temos a animation-direction, que escolhe se a
+animação vai do começo ao fim ou do fim pro começo, por exemplo.
+
+Ela aceita 4 valores:
+normal		// vai de 0% a 100%
+reverse 	//vai de 100% a 0%
+alternate	//vai de 0% a 100% e de 100% a 0% (vai e volta)
+alternate-reverse	//vai de 100% a 0% e de 0% a 100%
+
+
+Posso economizar espaço e declarar animation de uma vez
+(AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA):
+
+animation: name duration timing-function delay iteration-count direction;
+
+
+Exemplo: 
+
+animation: red-to-black 4s linear 0s 2 alternate-reverse;
+
+O que deixa isso muito útil, além do espaço, é que fica
+fácil adicionar os prefixos do browser:
+
+-webkit-animation: name duration timing-function delay iteration-count direction;
+-moz-animation: name duration timing-function delay iteration-count direction;
+-ms-animation: name duration timing-function delay iteration-count direction;	//explorer/edge
+-o-animation: name duration timing-function delay iteration-count direction;
 
 
 
