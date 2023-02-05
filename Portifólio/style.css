@@ -1,9 +1,16 @@
+/* font-family: 'Poppins', sans-serif; */
+
 h1 {
     color: rgb(61, 61, 61);
+    font-size: 90px;
 }
 
 h3 {
     color: rgb(48, 54, 66);
+    font-size:50px;
+    font-stretch:ultra-expanded;
+    font-weight:lighter;
+    padding-bottom: 1%;
 }
 
 p {
@@ -12,6 +19,7 @@ p {
 
 body {
     margin: 0;
+    font-family: 'Poppins', sans-serif;
 }
 
 
@@ -23,10 +31,11 @@ body {
     background-color: rgb(56, 182, 255);
     padding-left: 1%;
     padding-top: 1%;
+    height: fit-content;
 }
 
 .segunda-barra {
-    color: rgb(48, 54, 66);
+    color: rgb(48, 54, 66);;
 }
 
 .coluna-2 {
@@ -50,4 +59,10 @@ body {
     shape-outside: circle("img/Guest.jpg");
     clip-path: circle();
 
+}
+
+#mieiro{
+    font-family: 'Poppins', sans-serif;
+    font-weight: lighter;
+    padding-bottom: 1%;
 }
