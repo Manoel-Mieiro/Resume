@@ -1,34 +1,53 @@
-h1{
-  color: rgb(61, 61, 61);
-}
-
-h3{
-    color: rgb(48, 54, 66);
-}
-
-p{
-    color: rgb(115, 115, 115);
-}
-
-.barra-lateral{
-    color: rgb(56, 182, 255);
-}
-
-.background-header{
-    background-color: rgb(56, 182, 255);
-}
-
-.segunda-barra{
-    color:rgb(48, 54, 66);
-}
-
-#background-lateral{
-    background-color: rgb(48, 54, 66);
-    color: white;
-}
-
-.subtitle-lateral{
+h1 {
     color: rgb(61, 61, 61);
 }
 
+h3 {
+    color: rgb(48, 54, 66);
+}
 
+p {
+    color: rgb(115, 115, 115);
+}
+
+body {
+    margin: 0;
+}
+
+
+.barra-lateral {
+    color: rgb(56, 182, 255);
+}
+
+.background-header {
+    background-color: rgb(56, 182, 255);
+    padding-left: 1%;
+    padding-top: 1%;
+}
+
+.segunda-barra {
+    color: rgb(48, 54, 66);
+}
+
+.coluna-2 {
+    background-color: white;
+    padding-left: 1%;
+    padding-top: 2%;
+}
+
+.subtitle-lateral {
+    color: rgb(61, 61, 61);
+}
+
+#background-lateral {
+    background-color: rgb(48, 54, 66);
+    padding-left: 1%;
+    color: white;
+}
+
+#profile {
+    width: 90px;
+    shape-outside: circle("img/Guest.jpg");
+    clip-path: circle();
+
+}
