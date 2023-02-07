@@ -38,24 +38,29 @@ body {
     color: rgb(48, 54, 66);;
 }
 
-.coluna-2 {
-    background-color: white;
-    padding-left: 1%;
-    padding-top: 2%;
-}
+
 
 .subtitle-lateral {
     color: rgb(61, 61, 61);
 }
 
-#background-lateral {
+#coluna-1 {
     background-color: rgb(48, 54, 66);
     padding-left: 1%;
     color: white;
+    float: left;
+    width: 22%;
+}
+
+#coluna-2 {
+    background-color: white;
+    /* padding-left: 20%; */
+    padding-top: 5%;
+    padding-inline-start: 25%;
 }
 
 #profile {
-    width: 90px;
+    width: 20%;    /*era 90px*/
     shape-outside: circle("img/Guest.jpg");
     clip-path: circle();
 
