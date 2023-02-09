@@ -2,8 +2,11 @@
 
 h1 {
     color: rgb(61, 61, 61);
-    /* font-size: 90px; */
-    font-size: 9vh;
+    font-size: 600%;
+}
+
+h2{
+    font-size: 160%;
 }
 
 h3 {
@@ -16,24 +19,27 @@ h3 {
 
 p {
     color: rgb(115, 115, 115);
+    font-size: 90%;
 }
 
 body {
     margin:0%;
     padding:0%;
     font-family: 'Poppins', sans-serif;
+    width: 70%;
 }
-
 
 .barra-lateral {
     color: rgb(56, 182, 255);
 }
 
+
 .background-header {
     background-color: rgb(56, 182, 255);
     padding-left: 1%;
     padding-top: 1%;
-    height:fit-content;
+    width: 300%;
+    height: 0.00014%;
 }
 
 .segunda-barra {
@@ -46,16 +52,23 @@ body {
     color: rgb(61, 61, 61);
 }
 
-.periodo{
-    color: rgb(61, 61, 61);
-    float:right;
-    font-size: 100%;
+ .icon{
+    width: 5%;
+    padding-right: 2%;
+    padding-bottom: 2%;
 }
 
-.icon{
-    height: 1vh;
-    width: 1.4vh;
+
+.fa-brands{
+    color: rgb(56, 182, 255);
     padding-right: 2%;
+    padding-bottom: 5%;
+}
+
+.fa-solid{
+    color: rgb(56, 182, 255);
+    padding-right: 2%;
+    padding-bottom: 5%;
 }
 
 .rectangle{
@@ -64,32 +77,34 @@ body {
     background: rgb(56, 182, 255);
 }
 
+.fa-solid{
+    color: rgb(56, 182, 255);
+}
+
+
+.dark-mode {
+    background-color: rgb(61, 61, 61);
+    color: white;
+  }
+
 #coluna-1 {
     background-color: rgb(48, 54, 66);
     padding-left: 1%;
     color: white;
     float: left;
-    width: 44vh; /* era 400px */
-    height: 150vh;
-    /* era 100dvh */
-
-    font-size: 1.6vh;
+    width: 24%; 
+    height: 120vb;
+    font-size: 98%;
 }
 
 #coluna-2 {
     background-color: white;
-    padding-left: 15%;
-    padding-top: 2cm;
-    padding-inline-start: 13cm;
+    padding-left: 27%;
+    padding-top: 1.7cm;
+    /* padding-inline-start: 13cm; */
     padding-bottom: 5%;
-    font-size: 100%;
     text-align: left;
-}
-
-#profile {
-    width: 20%;    /*era 90px*/
-    shape-outside: circle("img/Guest.jpg");
-    clip-path: circle();
+    width: 80%;
 }
 
 #mieiro{
