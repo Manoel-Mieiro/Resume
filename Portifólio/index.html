@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<!-- aprendendo css (inicio) -->
 <link rel="stylesheet" type="text/css" href="style.css">
-<!-- aprendendo css (fim) -->
 <!-- reset da margem e do padding (removedor de bordas brancas) -->
 <style type="text/css">
     * {
@@ -14,6 +12,11 @@
 <!-- Importando Poppins -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!-- favicon cdn -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+    integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+<!-- favicon cdn -->
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet">
 <!-- Importando Poppins -->
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -34,18 +37,20 @@
         <br>
     </div>
     <div id="coluna-1">
-        <br>
-        <img id="profile" src="img/Guest.jpg">
         <br><br>
         <h2 class="barra-lateral">Contato</h2><br>
-        <img class="icon" src="img/colorido/address.png"><i>Rua de Lazer - 159: Pilares, Rio de Janeiro -Rj</i>
+        <i class="fa-solid fa-location-dot"></i>Rua de Lazer - 159: Pilares, Rio de Janeiro - Rj
         <br>
-        <img class="icon" src="img/colorido/email.png"><i>manoeljorgemieiro@gmail.com</i>
+
         <br>
-        <img class="icon" src="img/colorido/github.png">Manoel-Mieiro
+        <i class="fa-solid fa-envelope"></i><i>manoeljorgemieiro@gmail.com</i>
+        <br>
+        <i class="fa-brands fa-github"></i>Manoel-Mieiro
         <br><br><br><br>
         <h2 class="barra-lateral">Educação</h2><br>
-        <font size="4"><b>Bacharelado</b></font>
+        <!-- <font size="4.2%"> -->
+        <b>Bacharelado</b>
+        <!-- </font> -->
         <br>
         CEFET-RJ/Sistemas de Informação
         <br>
@@ -63,35 +68,35 @@
 
         <h2 class="barra-lateral">Habilidades</h2>
         <br>
-        <img class="icon" src="img/colorido/html.jpg">HTML<br>
-        <img class="icon" src="img/colorido/css.png">CSS<br>
-        <img class="icon" src="img/colorido/sql.png">SQL<br>
-        <img class="icon" src="img/colorido/javascript.png">JavaScript<br>
-        <img class="icon" src="img/colorido/c.png">C<br>
-        <img class="icon" src="img/colorido/java.png">Java<br>
-        <img class="icon" src="img/colorido/power-bi.png"> Power BI<br>
-        <img class="icon" src="img/colorido/ms-office.png"> MS Office
-
+        <i class="fa-brands fa-html5 fa-xl"></i>HTML<div class="progress" style="--width: 51" data-label="&nbsp"></div>
+        <br>
+        <i class="fa-brands fa-css3-alt fa-xl"></i>CSS<div class="progress" style="--width: 31" data-label="&nbsp">
+        </div><br>
+        <i class="fa-solid fa-database fa-xl"></i>SQL<div class="progress" style="--width: 18" data-label="&nbsp"></div>
+        <br>
+        <i class="fa-brands fa-js fa-xl"></i>JavaScript<div class="progress" style="--width: 44" data-label="&nbsp">
+        </div><br>
+        <i class="fa-solid fa-c fa-xl"></i>C<div class="progress" style="--width: 58" data-label="&nbsp"></div><br>
+        <i class="fa-brands fa-java fa-xl"></i>Java<div class="progress" style="--width: 46" data-label="&nbsp"></div>
+        <br>
+        <i class="fa-solid fa-chart-simple fa-xl"></i> Power BI<div class="progress" style="--width: 31"
+            data-label="&nbsp"></div><br>
+        <i class="fa-sharp fa-solid fa-file-excel fa-xl"></i> MS Office<div class="progress" style="--width: 64"
+            data-label="&nbsp"></div>
         <br><br><br><br>
-        <!-- CTRL + K + C para comentar -->
-        <!-- CTRL + K + U para não comentar -->
-        <!-- Início da Segunda coluna -->
-
     </div>
-
-
-    <!-- <br><br><br><br> -->
     <div id="coluna-2">
-        <h2 class="segunda-barra">Objetivo Profissional</h2>
+        <h2 class="segunda-barra">Objetivo Profissional <div class="line"></div>
+        </h2>
         <p> Atuar como desenvolvedor WEB.</p>
-        <br><br><br>
-        <h2 class="segunda-barra">Experiência Profissional</h2>
+        <h2 class="segunda-barra">Experiência Profissional <div class="line"></div>
+        </h2>
         <div class="subtitle-lateral">
             <b>Jovem Aprendiz</b>
             <!-- &nbsp; para aplicar um espaço em branco -->
             <br>
-            <b>Nokia Solutions and Networks do Brasil</b> <span class="periodo">2021 -
-                2022 </span>
+            <b>Nokia Solutions and Networks do Brasil</b> <span class="period">2021 -
+                2022</span>
         </div>
         <p>
             <align="left">Na empresa atuei no time de P&T (Process and Tools).
@@ -105,12 +110,13 @@
                 aplicações low code com o PowerApps.
                 </align>
         </p>
-        <br><br><br><br>
         <div class="segunda-barra">
-            <h2>Cursos Complementares</h2>
+            <h2>Cursos Complementares<div class="line"></div>
+            </h2>
             <b>JavaScript</b>
             <br>
-            <b class="segunda-barra">JS Institute/JavaScript Essentials 1</b> <span class="periodo">2022 - 2023</span>
+            <b class="segunda-barra">JS Institute/JavaScript Essentials 1</b><span class="period">
+                2022-2023</span>
         </div>
         <p>
             <align="left">
@@ -120,11 +126,10 @@
                 fluxo de controle e funções.
                 </align>
         </p>
-        <br><br><br><br>
         <div class="segunda-barra">
             <b>SQL</b>
             <br>
-            <b>Conquer/SQL báscio</b> <span class="periodo">2022</span>
+            <b>Conquer/SQL básico</b> <span class="period">2022</span>
         </div>
         <p>
             <align="left">
@@ -132,12 +137,10 @@
                 conceitos e comandos básicos da linguagem.
                 </align>
         </p>
-        <br><br><br><br>
-
         <div class="segunda-barra">
             <b>HTML</b>
             <br>
-            <b>freeCodeCamp/HTML Full Course</b> <span class="periodo">2023</span>
+            <b>freeCodeCamp/HTML Full Course</b> <span class="period">2023</span>
         </div>
         <p>
             <align="left">
@@ -147,11 +150,10 @@
                 Tables; Divs & Spans; Input & Forms; iFrames; Metatags.
                 </align>
         </p>
-        <br><br><br><br>
         <div class="segunda-barra">
             <b>CSS</b>
             <br>
-            <b>freeCodeCamp/CSS - Zero to Hero</b> <span class="periodo">2023</span>
+            <b>freeCodeCamp/CSS - Zero to Hero</b> <span class="period">2023</span>
         </div>
         <p>
             <align="left">
@@ -163,6 +165,3 @@
     </div>
 
 </body>
-
-<!-- Insight:
-Colocar infromações de contato na tag footer, o resto na main e criar uma header com um possivel menu de navegação -->
